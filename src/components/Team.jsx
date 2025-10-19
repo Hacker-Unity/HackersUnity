@@ -284,11 +284,11 @@ const founders = [
     name: 'Jha Suraj Kumar',
     role: 'Founder',
     image: 'images/jhasurajkumar.jpg',
-    bio: 'Tech entrepreneur with 15+ years of experience in building communities and organizing tech events.',
+    bio: 'Tech entrepreneur with experience in building communities and organizing 15+ hackathons and 50+ Technical Workshops',
     social: {
-      linkedin: 'https://www.linkedin.com/in/jha-suraj-kumar/',
+      linkedin: 'https://www.linkedin.com/in/jha-surajkumar/',
       twitter: 'https://x.com/Surajkumar2jha',
-      instagram: '#'
+      instagram: 'https://www.instagram.com/suraj.lov_07'
     }
   },
   {
@@ -296,11 +296,11 @@ const founders = [
     name: 'Chinmay Bhatt',
     role: 'Co-Founder',
     image: 'images/chinmay.jpg',
-    bio: 'Software engineer and hackathon enthusiast with a passion for mentoring the next generation of developers.',
+    bio: 'Tech entrepreneur with experience in organizing 4+ hackathons and 5+ Technical Workshops',
     social: {
       linkedin: 'https://www.linkedin.com/in/chinmaybhattt',
       twitter: 'https://x.com/chinmaybhattt',
-      instagram: '#'
+      instagram: 'https://www.instagram.com/chinmaybhattt'
     }
   },
 ];
@@ -524,101 +524,7 @@ const Team = () => {
           </motion.div>
         </div>
 
-        {/* Core Team Section - Auto-scrolling Carousel */}
-        <div>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold text-center text-white mb-16 relative inline-block"
-          >
-            <span className="relative z-10">Core Team</span>
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent"></span>
-          </motion.h3>
-
-          {/* Auto-scrolling carousel container */}
-          <div className="relative overflow-visible w-full py-8">
-            <motion.div 
-              className="flex"
-              initial={{ x: 0 }}
-              animate={carouselControls}
-              style={{ x }}
-              onHoverStart={() => setIsHovering(true)}
-              onHoverEnd={() => setIsHovering(false)}
-              // Ensure smooth transition when component mounts
-              transition={{ duration: 0 }}
-            >
-              {duplicatedMembers.map((member, index) => (
-                <motion.div
-                  key={`${member.id}-${index}`}
-                  className="glass-effect rounded-xl p-5 text-center group flex-shrink-0 mx-0.5"
-                  style={{ width: '180px' }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { duration: 0.5 } }}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <motion.div 
-                    className="mb-6 mx-auto w-28 h-28 rounded-full overflow-hidden border-2 border-secondary/30"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0px 10px 25px rgba(79, 70, 229, 0.4)",
-                      transition: { 
-                        duration: 0.3, 
-                        ease: "easeInOut" 
-                      }
-                    }}
-                  >
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  
-                  <h4 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                    {member.name}
-                  </h4>
-                  
-                  <p className="text-accent text-sm mb-3 font-medium">{member.role}</p>
-                  
-                  <p className="text-gray-300 text-sm mb-5 line-clamp-3">{member.bio}</p>
-                  
-                  <div className="flex justify-center space-x-4">
-                    <motion.a
-                      href={member.social.linkedin}
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                    >
-                      <LinkedInIcon />
-                    </motion.a>
-                    <motion.a
-                      href={member.social.twitter}
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                    >
-                      <TwitterIcon />
-                    </motion.a>
-                    <motion.a
-                      href={member.social.instagram}
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                    >
-                      <InstagramIcon />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
+        {/* Core Team Section - Auto-scrolling Carousel - Commented out as requested */}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -631,7 +537,10 @@ const Team = () => {
             We're always looking for talented individuals who are passionate about technology and community building.
             If you're excited about making an impact in the tech world, we'd love to hear from you!
           </p>
-          <motion.button
+          <motion.a
+            href="https://forms.gle/CBN36n3sssEr31Lo8"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0px 5px 15px rgba(79, 70, 229, 0.4)"
@@ -654,7 +563,7 @@ const Team = () => {
                 d="M17 8l4 4m0 0l-4 4m4-4H3" 
               />
             </svg>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
       

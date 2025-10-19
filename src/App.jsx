@@ -31,9 +31,9 @@ function App() {
             <>
               <Hero />
               <Achievements />
+              <Events />
               <Sponsors />
               <Partners />
-              <Events />
               <Team />
             </>
           } />
